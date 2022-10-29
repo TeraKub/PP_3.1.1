@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User_Info</title>
+</head>
+<body>
+<h2>User Info</h2>
+<br>
+
+<table>
+    <form th:method="POST" th:action="@{/{id}(id=${user.getId()})}" th:object="${user}">
+
+        <td>
+            <label for="name">Name</label><br/><br/>
+            <label for="surname">Surname</label><br/><br/>
+            <label for="age">Age</label><br/><br/>
+            <label for="instrument">Instrument</label><br/><br/>
+            <input type="submit" value="OK"/>
+        </td>
+
+        <td>
+            <input type="text" th:field="*{name}" id="name"><br/><br>
+            <input type="text" th:field="*{surname}" id="surname"><br/><br>
+            <input type="number" th:field="*{age}" id="age"><br/><br>
+            <input type="text" th:field="*{instrument}" id="instrument"><br/><br>
+            <br/>
+        </td>
+
+
+<!--        <label for="name">Name</label>-->
+<!--        <input type="text" th:field="*{name}" id="name">-->
+<!--        <br/><br/>-->
+
+<!--        <label for="surname">Surname</label>-->
+<!--        <input type="text" th:field="*{surname}" id="surname">-->
+<!--        <br/><br/>-->
+
+<!--        <label for="age">Age</label>-->
+<!--        <input type="number" th:field="*{age}" id="age">-->
+<!--        <br/><br/>-->
+
+<!--        <label for="instrument">Instrument</label>-->
+<!--        <input type="text" th:field="*{instrument}" id="instrument">-->
+<!--        <br/><br/>-->
+
+<!--        <input type="submit" value="OK"/>-->
+    </form>
+</table>
+<br/><br/>
+
+
+</body>
+</html>
