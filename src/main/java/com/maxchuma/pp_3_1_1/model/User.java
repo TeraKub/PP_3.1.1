@@ -1,6 +1,7 @@
 package com.maxchuma.pp_3_1_1.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "users")
@@ -70,5 +71,18 @@ public class User {
 
     public void setInstrument(String instrument) {
         this.instrument = instrument;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && age == user.age && Objects.equals(name, user.name) && Objects.equals(surname, user.surname) && Objects.equals(instrument, user.instrument);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, surname, age, instrument);
     }
 }
